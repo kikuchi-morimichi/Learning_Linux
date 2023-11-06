@@ -1,0 +1,12 @@
+; コマンド「show version」を実行
+; sendln 'show version'
+
+;プロンプト「switch#」が返ってくるまで待つ
+; wait 'switch#'
+
+;次のコマンド「show running-config」を実行
+; sendln 'ip address show'
+
+sendln 'cal 11 2023'
+
+sendln 'pwd'
