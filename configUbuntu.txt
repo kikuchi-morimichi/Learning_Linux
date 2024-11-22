@@ -1,0 +1,32 @@
+# アップデートの確認
+
+# アップデートの実行
+sudo apt -y update
+
+# アップグレードの実行
+sudo apt -y upgrade
+
+# opensshのインストール
+sudo apt -y install openssh-client
+sudo apt -y install openssh-server
+
+# フォルダ名を英語表記に変更する
+LANG=C xdg-user-dirs-update --force
+cat .config/user-dirs.dirs
+
+
+# pipの確認
+which pip
+which pip3
+
+# pipのインストール
+sudo apt install python3-pip
+
+# pipenvのインストール
+pip install pipenv
+
+# インストールされているか確認
+pip --version
+
+# pipenvのインストール
+pip install pipenv
