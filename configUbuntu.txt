@@ -13,8 +13,9 @@ sudo apt -y install openssh-server
 # フォルダ名を英語表記に変更する
 LANG=C xdg-user-dirs-update --force
 cat .config/user-dirs.dirs
+あとは日本語のフォルダを削除して、再起動
 
-
+### pythonの仮想環境作成 ###
 # pipの確認
 which pip
 which pip3
@@ -22,11 +23,37 @@ which pip3
 # pipのインストール
 sudo apt install python3-pip
 
-# pipenvのインストール
-pip install pipenv
+# pythonコマンドが実行できないので以下をインストールする
+sudo apt install python-is-python3
+
+# python仮想環境を作るために以下をインストールする
+sudo apt install python3.12-venv
+
+# python仮想環境用のフォルダを作成して移動
+mkdir /home/morimichi/pythonVirtualEnv
+cd /home/morimichi/pythonVirtualEnv
+# venvという名前のpython仮想環境を作成
+python -m venv venv 
+
+#./venv/bin/activateに実行権限を追加
+chmod u+x ./venv/bin/activate
+
+# 仮想環境をアクティベート
+source ./venv/bin/activate
+
+# 以下のコマンドでVScodeを開く
+code .
+
+# 仮想環境のディアクティベート
+deactivate
 
 # インストールされているか確認
 pip --version
 
-# pipenvのインストール
-pip install pipenv
+# インストール済みライブラリの確認
+pip list
+
+
+
+
+
