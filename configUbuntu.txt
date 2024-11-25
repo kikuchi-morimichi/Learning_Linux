@@ -50,10 +50,36 @@ deactivate
 # インストールされているか確認
 pip --version
 
+# 仮想環境にJupyter Notebookのインストール
+pip install notebook
+
+# 仮想環境にデータ分析用ライブラリをインストール(numpyはすでに入っていた)
+pip install pandas
+pip install Matplotlib
+pip install Scikit-learn
+pip install TensorFlow
+pip install Keras
+
 # インストール済みライブラリの確認
 pip list
 
+# Jupyter Notebookの起動
+jupyter notebook
 
 
+# RDP接続　https://linux-jp.org/?p=1056
+sudo apt install xrdp
+
+sudo adduser xrdp ssl-cert
+
+sudo ufw allow from 192.168.3.0/24 to any port 3389
+sudo ufw reload
+sudo ufw status
+#　ファイアウォールを有効にする
+sudo ufw enable
+
+sudo ufw allow from 192.168.3.0/24 to any port 22
+
+# windowsからRDP接続する　pro以上が必要
 
 
