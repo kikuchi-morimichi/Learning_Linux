@@ -1,0 +1,674 @@
+## manコマンド ##
+man -k,f
+kはキーワードに一部一致
+fは完全一致
+
+
+## lsコマンド ##
+ls -a,l,d,F,i,R,t,S,h
+●dは指定したディレクトリ自体の情報を表示
+●Fは名前の後ろにファイルタイプを表示
+iはiノード番号を表示
+●Rはサブディレクトリの内容も表示
+tは時間順
+Sはサイズ順
+
+file操作
+
+
+fileコマンドでアクセス日時のみを変更可能
+"-test.txt"などの-が入るファイルを作成するには,--を入力するか、パスでファイルを指定する
+touch -- -test.txt
+touch ./-test.txt
+
+## cpコマンド ##
+
+cp -f,i,p,r|R
+fは
+iは同名のファイルやディレクトリがある時に確認をする
+pはファイルの属性をそのままコピー
+r|R フォルダ配下全てコピー
+
+## mkdir ##
+mkdir -m,p
+●mはアクセス権をつける
+●pは中間ディレクトリも作成
+
+ mkdir -m 644 test
+ mkdir -p test/test2/test3
+
+
+## rmdirコマンド ##
+rmdir -r <親フォルダ/子フォルダ> 
+rを指定すると親フォルダも削除される
+名にも指定しない場合は子フォルダのみ削除される
+
+
+## touchコマンド ##
+touch -t,a,m
+tは時刻を指定
+aはアクセス時刻を更新
+mは更新時刻を更新
+
+## ddコマンド ##
+デバイス間でのコピーに使うコマンド
+ dd if=/dev/zero of=damyfile bs=1M count=10 ダミーファイルの作成
+ dd id=test of=/dev/sdc　USBにファイルをコピー
+
+・アーカイブコマンド
+## tarコマンド ##
+tar -c,x,t,f,v,z,j,J <アーカイブファイル名>
+tはアーカイブの内容を標準出力
+vは処理内容を表示
+zはgzip
+jはbzip2
+Jはxz
+
+ tar cvf test.txt test.txt.tar
+ tar xvf tast.txt.tar
+
+
+・圧縮コマンド
+## gzipコマンド ##
+gzip -d,c,r
+dは展開
+cは元ファイルを残して標準出力
+rはディレクトリ内のすべてのファイルをそれぞれ圧縮
+
+ gzip test.txt
+ gzip -c test.txt > test.txt.gz
+ gzip -r test (testはディレクトリ)圧縮
+ gzip -dr test (testはディレクトリ)展開
+
+## xzコマンド ##
+xz -d,k,l
+kは元のファイルを残す keepのこと
+●lは圧縮ファイルの情報表示
+
+
+
+パイプ、リダイレクト
+
+>
+>>
+<
+> ファイル 2>&1 # 標準出力と標準エラー出力
+# 1が標準出力　2が標準エラー出力
+>> ファイル 2>&1 # 標準出力と標準エラー出力
+<<　終了文字　# 終了文字が出てくるまで標準出力へ送る　ヒアドキュメントという
+2>　# 標準エラー出力
+2>>　# 標準エラー出力
+&> 標準出力と標準エラー出力
+
+ cat << world
+worldという文字を入力するまで入力される
+
+## teeコマンド ##
+標準出力とファイル保存を同時に行う
+tee -a 
+
+## xargsコマンド ##
+xargs -a
+
+
+## trコマンド ##　トレード？
+標準出力からのみ受け付ける
+tr -d,s
+dは指定した文字を削除
+sは連続した文字を1文字に置き換える
+tr -s [:space:] < test.txt　# スペースを1つに置き換える
+cat test.txt | tr -s [:space:] # スペースを1つに置き換える
+
+文字クラス
+[:alpha:] 英字
+[:lower:] 小文字 a-z
+[:upper:] 大文字 A-Z
+[:digit:] 数字 0-9
+[:alnum:] 英数字
+[:space:] 空白
+
+
+## sortコマンド ##
+sort -t,n,k
+●tは区切り文字
+●nは数値として扱う
+●kはフィールド指定
+sort -k 2 -n -t : test.txt # :で区切った時の2番目のフィールドでソートする
+
+重複行をまとめるコマンド
+## uniqコマンド ##
+uniq text.txt newfile.txt # 重複した行をまとめて出力
+uniq -d text.txt # 重複行のみ表示
+uniq -u text.txt # 重複していない行のみ表示
+
+## prコマンド ## 印刷データ
+pr -l,h,+
+lは行数指定
+hはヘッダも字列
++は開始ページ、:は終了ページ
+pr -l 30 +1:2 test.txt # 30行で1ページ、1,2ページを表示
+
+ファイルに行番号をつける
+## nlコマンド ##　ナンバーライン？？
+nl test.txt # 空行は除く
+nl -b a test.txt # 空行にも番号　allのこと
+nl -b t test.txt # 空行は除く　デフォルト
+●cat -b test.txt # 空行は除く
+●cat -n test.txt # 空行にも番号　
+
+共通のフィールドを持つ行を結合
+## joinコマンド ##
+join -j 2 test.txt test2.txt
+数字はフィールド番号
+
+先頭行を表示する
+## headコマンド ##
+head -n 5 test.txt
+head -5 test.txt
+●head -c バイト数
+
+末尾の行を表示する
+## tailコマンド ##
+tail -n 5 test.txt
+tail -5 test.txt
+tail -c バイト数　test.txt
+tail -f test.txt 
+
+タブをスペースに変換するコマンド
+## expandコマンド ##
+expand -t 1 test.txt # タブを1つのスペースに置き換える
+expand test.txt # タブを8つのスペースに置き換える　デフォルトが8
+expand -i test.txt # 先頭のタブを変換
+
+
+スペースをタブに変換するコマンド
+## unexpandコマンド ##
+unexpand -a test.txt # 行頭以外のスペースも変換
+unexpand -t 1 test.txt
+
+
+指定したフィールドを切り出して表示するコマンド
+## cutコマンド ##
+cut -c 2 test.txt # 各行の2文字目を取り出す
+cut -d : -f 1 /etc/passwd　# 各行を:で区切った1つ目のフィールドを抜き出し
+
+一行の文字数を指定して整形してくれるコマンド
+## fmtコマンド ##
+fmt -w 10 test.txt ?
+
+指定サイズでファイルを分割するコマンド
+## splitコマンド ##
+split -l 10 test.txt # 10行で分割
+split -b 
+split text.txt # 1000行で分割　デフォルト
+
+ファイルの内容を8進数、16進数で表示するコマンド
+## odコマンド ##
+od test.txt
+od -o test.txt 8進数表示
+od -x test.txt # 16進数表示
+od -c test.txt # ASCII表示
+od -t oバイト数 test.txt # 8進数バイト区切りで表示
+od -t xバイト数 test.txt # 16進数バイト区切りで表示
+od -t c test.txt # ASCII文字で表示
+
+
+pasteコマンド
+
+環境変数を表示するコマンド　暗記
+set
+declare
+env
+printenv
+
+代表的な環境変数
+HISTFILE
+HISTSIZE
+HISTFILESIZE
+HOSTNAME
+HOME
+LANG
+PATH
+PWD
+USER
+
+## unsetコマンド ##
+unset 変数名
+変数を削除する
+
+## declareコマンド ##
+環境変数の定義
+declare -x 環境変数=値
+
+## exportコマンド ##
+export 環境変数=値
+export -n 環境変数　#削除
+export -p #環境変数の表示
+
+## whatis ##
+
+man -f　と同じ
+
+## apropos ##
+
+man -k　と同じ
+
+
+権限
+
+chmod -R 755 test(ディレクトリ)
+Rを指定するとディレクトリ配下のパーミッションを変更できる
+
+SUID 4000, u+s
+SGID 2000, g+s
+スティッキービット　1000, o+tを指定する
+
+ディレクトリ
+/usr配下の配置
+/usr/bin システムの起動に必須でない一般ユーザ用のコマンド
+/usr/sbin システムの起動に必須でないシステム管理用のコマンド
+/usr/lib 上記のコマンドで必要なライブラリ
+/usr/local ホスト固有で使用するプログラムや設定ファイル
+	/usr/local/bin プログラムを格納
+	/usr/local/etc 設定ファイルを格納
+/usr/share/man マニュアル
+
+
+検索コマンド
+
+# フォルダ内のファイルを検索
+
+## findコマンド ##
+find <フォルダ> -name,atime,mtime,perm,size,type,user,maxdepth,mindepth <xxx> (アクション)
+atimeはアクセス日
+mtimeは更新日
+permはアクセス権
+
+アクション
+-print 	改行区切りで表示
+-print0　null文字(\0)で区切って表示
+-exec コマンド名 {}\;　コマンド実行
+
+# ファイルの場所をDBをもとに検索
+* sudo apt install plocate でインストールが必要
+
+## locateコマンド ##
+locate <ファイル名>
+
+# 検索用のDBを更新する
+updatedb 
+-eを指定するとデータベースから除外する
+
+# コマンドファイルの格納場所を表示
+which <コマンド名>
+
+# コマンドのバイナリ、マニュアル、ソースファイルの場所を表示
+whereis -b,m,s <コマンド名>
+
+# エイリアス、組み込み関数？などを確認
+type <コマンド名>
+
+
+正規表現
+abc. 　任意の1文字   abcd, abc3, abcpなど
+[abc]　カッコ内のどれか1文字    a, b, c
+[a-c]  連続した文字のどれか1文字　　a, b, c
+[^abc] abc以外のどれか1文字
+^abc　 先頭の文字　　　abcde.sh など　
+abc$　 末尾の文字     morimichi.abcなど
+abc\*　エスケープ     "abc*"
+
+拡張正規表現
+abc+　 左の文字を繰り返す　　abcc, abccc, abccccccccccなど
+abc?　 左の文字を0or1回繰り返す   abc, abcc
+ab(cd|dc) 左右のどちらか   abcd, abdc
+abc{5} 左の文字をn回繰り返す    abcccccc
+abc{2,9} 左の文字をn回からm回繰り返す   abccc,abcccc, abccccc, abcccccc, abccccccc,,,abcccccccccc
+
+# 指定した文字列を検索
+
+##grepコマンド ##
+grep <文字列> (ファイル名)
+grep -c,f,i,n,v,E,F
+cは行数
+fはファイルの中身の文字で検索
+●iは大文字小文字を区別しない
+●nは行番号も表示する
+●vは検索文字以外を表示
+Eは拡張正規表現を使用する
+●Fは正規表現を無効化して固定文字列とする
+
+grep "hello" aisatsu.txt
+grep -c hello aisatsu.txt
+grep -f hello.txt aisatsu.txt
+grep -inv "unko" unko.txt
+
+egrep 拡張正規表現を使うgrep
+fgrep 正規表現を使用しないgrep
+
+
+## wcコマンド ##
+wc -l,w,c
+lは行数 line
+wはワード数 word
+cは文字数 
+
+## sedコマンド ##
+sed -e,f,i
+fはファイル指定　ファイル内にコマンドが書いてある
+●-iは上書き保存 これを使わない場合は保存されない
+
+sコマンド(各行の最初に現れる特定の文字列の置換)
+
+sed s/abc/ABC/ test.txt
+sed s/abc/ABC/g test.txt # gを付けると全て置換する
+sed s/abc/ABC/i test.txt # 大文字と小文字を区別せず置換する
+sed s/abc/&def/
+
+dコマンド(delete)
+sed /abc/d test.txt # 文字列abcが含まれる行を削除
+sed '1,3d' test.txt > test3.txt
+sed -e /abc/d -e /^a.c$/d
+
+yコマンド(文字を置換 文字列でないことに注意)
+sed y/ace/123/ text.txt # aは1に、bは2に、cは3に置換される
+ 
+
+改行コード
+CRLF \r\n # Windowsで使われる
+LF \n # Linux,MacOSで使われる
+CR \r # 古いMacOSで使われる
+
+基本的にはLF(\n)が使われる
+
+
+vimの使用
+
+# テキストエディタの切り替え
+export EDITER=/usr/bin/vim
+
+:set nu　　行番号を表示
+:set nonu　行番号を非表示
+:set ts=4 Tabキーで挿入される空白の数を設定
+
+
+パッケージ管理
+
+# apt-getコマンド
+apt-get -s,y
+sはシステムを変更せずにシミュレート
+yは自動的にyを入力
+
+apt-get autoclean,autoremove,download,dist-upgrade,install,remove,update,upgrade,clean
+dist-upgradeは全パッケージ、カーネルのアップグレード
+
+# apt-getが利用するリポジトリ
+/etc/apt/sources.list.d
+/etc/apt/sources.list
+
+# 最新のubuntuだと以下のファイル
+/etc/apt/sources.list.d/ubuntu.sources
+--------------------------------------------
+$ cat /etc/apt/sources.list.d/ubuntu.sources
+Types: deb
+URIs: http://jp.archive.ubuntu.com/ubuntu/
+Suites: noble noble-updates noble-backports
+Components: main restricted universe multiverse
+Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
+
+Types: deb
+URIs: http://security.ubuntu.com/ubuntu/
+Suites: noble-security
+Components: main restricted universe multiverse
+Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
+--------------------------------------------
+
+# apt-cacheコマンド
+apt-cache search,show,showpkg,depends
+ apt-cache search tree
+searchはキーワードでパッケージを検索
+showはパッケージ情報の表示
+showpkgは指定したパッケージの被依存関係を含めた情報の表示
+dependsはパッケージの依存パッケージを表示
+
+apt-cache showpkg
+
+# aptコマンド(推奨)
+apt -c,d,y, --reinstall
+サブコマンドはapt-get,apt-cacheと同じ
+cは設定ファイルの指定
+dはパッケージのダウンロードのみ
+yは自動でyを入力
+
+# apt-file
+apt-file update,search,find,list,show
+
+
+# インストール
+sudo apt -y install apt-fileでインストールが必要
+# 消すのは以下
+sudo apt purge apt-file
+# パッケージのリスト
+apt list
+
+# dpkgコマンド
+dpkg -E,G,R, 
+Eは同じバージョンがある場合はインストールしない
+Gは新しいバージョンがすでにインストールされている時はインストールしない
+Rディレクトリ内を再帰的に処理する 
+
+アクション
+-i,r,P,l,S,L,s,C --unpack, --configure, --reconfigure
+iはインストール install
+rは設定ファイルを残してアンインストール remove
+Pは設定ファイルも完全にアンインストール purge
+lはインストール済みのパッケージを表示する list
+Sは指定したファイルがどのパッケージからインストールされたのかを表示 search
+Lは指定したパッケージからインストールされたファイルを一覧表示 listfiles
+sは指定したパッケージの情報を表示する status
+Cはインストールが完了していない不完全なパッケージの表示　audit
+unpackはパッケージの展開
+configureは展開されたパッケージを設定する
+reconfigureは指定したインストール済みのパッケージを再設定する
+
+
+# YUMコマンド
+yum install,remove,update,check-update,info,list,repolist,search,grouplist,groupinstall,localinstall,deplist
+update 指定したパッケージをアップデートする
+check-update インストールしたパッケージの中でアップデート待ちのものを表示
+list レポジトリにある全てのパッケージの情報を一覧表示
+repolist レポジトリ一覧を表示する
+search 検索
+
+yum install <パッケージ名>
+yum install ./<パッケージファイル名>.rpm　#ローカル上のファイルでインストール
+yum localinstall ./<パッケージファイル名>.rpm　#ローカル上のファイルでインストール
+
+yum remove <>
+yum update # 全てアップデート
+yum update <> #指定したパッケージをアップデート
+yum check-update <>
+yum info <>
+
+yum list # インストール済み、利用可能なパッケージを一覧表示
+yum list <パッケージ名>　#インストール済みか確認できる
+
+yum deplist <> # 指定したパッケージが依存しているパッケージの一覧表示
+
+
+設定ファイルの場所
+/etc/yum.conf　yumのコンフィグ
+/etc/yum.repos.d　レポジトリの場所
+
+# RPMパッケージ管理
+rpm -i,U,F,v,h,--nodeps,--force,--test,e
+
+##インストール・アップグレード
+iはインストール --install
+Uはアップグレード＆インストール --upgrade
+Fはアップグレード --freshen
+
+rpm -i <パッケージファイル名>
+rpm -U <パッケージファイル名>
+rpm -F <パッケージファイル名>
+
+併用オプション
+vは詳細表示
+hは進捗状況表示 --hash
+--nodepsは依存関係無視インストール
+--forceはすでに存在するファイルを新しいものに置き換え
+--testはインストールせずに仮テストする
+
+##アンインストール
+eはパッケージをアンインストールする
+rpm -e <パッケージ名>
+
+併用オプション
+--nodeps
+
+##検索・表示
+rpm -q　指定したパッケージがインストールされているか調べる　--query
+
+併用オプション
+-a,f,c,d,i,l,R,changelog,p
+aは全て　--all # パッケージ名は指定しない
+fはファイルを含むパッケージを表示 
+cは設定ファイルのみ表示 --configfiles
+dはドキュメントのみ表示 --docfiles
+iは情報を表示 --info
+lはパッケージからインストールされたファイルを表示 --list
+Rはパッケージが依存しているファイルを表示 --requires
+changelogは変更履歴を表示
+pはパッケージを対象とする、パッケージファイル名を使用する。--package
+
+##パッケージの検査
+rpm -V　パッケージの検査　--verify
+
+併用オプション
+-a --all　# 全て
+--nomd5 # md5によるファイルのかいざん検査をしない
+
+
+
+ rpm -ivh <パッケージ>　インストール
+ rpm -Uvh <パッケージ>　更新
+ rpm -evh <パッケージ>　アンインストール
+ rmp -e --nodeps <パッケージ>　依存関係を無視してアンインストール
+ rpm -qa <パッケージ名>　インストール済みパッケージの一覧表示
+ rpm -qi <パッケージ名>　情報表示
+ rpm -ql <パッケージ名>　パッケージからインストールされたファイルを一覧表示
+ rpm -Va
+ rpm --verify --all
+
+
+ハードウェア管理
+
+/dev
+/proc
+    /cpuinfo
+    /interrupts　割り込み要求の情報
+    /ioports　I/Oポートアドレスの情報
+    /meminfo
+    /swaps
+    /bus/usb/デバイス名
+    /bus/pci/デバイス名
+/sys
+
+# CPUの情報を表示
+lscpu
+
+# pciデバイスの情報を詳細に表示
+lspci -v
+
+# usbデバイスの情報をツリー状に表示
+lsusb -t
+
+# ホットプラグを可能にする　カーネルからの通知を受けてデバイスファイルを動的に作成する
+udev(Userspace DEvice management)
+設定情報ファイルは/etc/udev/rules.dに配置される
+
+ロードされているカーネルモジュールの情報を表示するコマンド
+lsmod
+
+# デバイスドライバをロード
+modprobe
+insmod
+
+指定したカーネルモジュールをアンロード
+rmmod　# 依存関係を無視してアンロード
+modprobe -r # 依存している他のモジュールもアンロード
+modprobe --remove # 上記同様
+
+USBデバイスクラス
+HID(Human Interface Device) : キーボード、マウス、ジョイスティックなど
+Mass Storage Class：ハードディスク、USBメモリーなど
+ACM Communication Device Class：モデム、TAなど
+Audio Class：スピーカー、マイクなど
+
+それぞれのデバイスクラスにはクラスドライバという汎用ドライバが用意されている。
+
+#fdiskコマンド
+fdisk -l,n,d,p,t,a,w,q,m　<ディスク>
+lは一覧で表示
+nはパーティションの作成
+dはパーティションの削除
+pはパーティションテーブルの表示
+tはパーティションタイプの変更
+aはブートフラグのオンオフ
+wは保存して終了
+qは保存せずに終了
+mはヘルプメニューを表示
+
+fdisk /dev/sda
+
+
+# gdisk
+# parted 変更がすぐに反映されるので注意
+
+# パーティションテーブルの状態を表示する
+fdisk -l
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
