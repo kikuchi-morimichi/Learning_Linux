@@ -629,6 +629,66 @@ fdisk /dev/sda
 fdisk -l
 
 
+ファイルシステム
+
+ファイルシステムを作成
+
+mkfsコマンド
+mkfs -t,c
+tはファイルシステムの種類を指定する
+cは不良ブロックを検査する
+
+mkfs -t ext2 /dev/sdb1
+
+
+mke2fsコマンド　ext2,ext3,ext4を作成可能
+
+mke2fs -t,j,c
+tはファイルシステムの指定
+jはext3を作成
+cは不良ブロックを検査
+
+mke2fs -t ext4 /dec/sdb1
+
+btrfsファイルシステムの作成
+mkfs.btrfsコマンド　btrfsファイルシステムを作成
+
+mkfs.btrfs /dev/sdb1
+mkfs -t btrfs /dev/sdb1 と全く同じ
+mkfs -t btrfs　== mkfs.btrfs
+
+xfsファイルシステムの作成
+mkfs.xfsコマンド
+オプション
+xfs_info # 情報表示
+xfs_db # ファイルシステムのデバッグ
+xfs_check # ファイルシステムのチェック
+xfs_admin # パラメータの変更
+xfs_fsr # デフラグを実施
+xfs_repair # 検査・修復
+
+
+スワップ領域の作成
+mkswapコマンド　デバイス、ファイルを指定して作成が可能
+mkswap /dev/sdb1
+mkswap swap.file
+
+スワップ領域の有効化
+swaponコマンド
+swapon /dev/sdb1
+swapon swap.file
+swapon -s # 有効化されているスワップファイルの一覧表示
+
+スワップ領域の無効化
+swapoffコマンド
+swapoff /dev/sdb1
+swapoff swap.file
+
+
+ファイルシステムのマウント
+
+
+
 
 
 
