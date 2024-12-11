@@ -24,9 +24,9 @@ touch ./-test.txt
 ## cpコマンド ##
 
 cp -f,i,p,r|R
-fは
+fはコピー先が上書き不可の場合、削除してコピー
 iは同名のファイルやディレクトリがある時に確認をする
-pはファイルの属性をそのままコピー
+●pはファイルの属性をそのままコピー
 r|R フォルダ配下全てコピー
 
 ## mkdir ##
@@ -49,6 +49,11 @@ touch -t,a,m
 tは時刻を指定
 aはアクセス時刻を更新
 mは更新時刻を更新
+touch test.txt
+touch -a test.txt
+touch -m test.txt
+touch -at 202412241200 test.txt
+touch -mt 202412241200 test.txt
 
 ## ddコマンド ##
 デバイス間でのコピーに使うコマンド
@@ -82,9 +87,18 @@ rはディレクトリ内のすべてのファイルをそれぞれ圧縮
 
 ## xzコマンド ##
 xz -d,k,l
-kは元のファイルを残す keepのこと
+dは展開　--decompress 
+kは元のファイルを残す --keep
 ●lは圧縮ファイルの情報表示
 
+xz -l test.txt.xz
+
+## bzip2コマンド ##
+bzip2 -d, -c
+dは展開
+cは元ファイルを残して標準出力
+
+bzip2 -c test.txt > test.txt.bz2
 
 
 パイプ、リダイレクト
@@ -622,8 +636,12 @@ mはヘルプメニューを表示
 fdisk /dev/sda
 
 
-# gdisk
+# gdisk　GPTバージョンのfdisk
+
 # parted 変更がすぐに反映されるので注意
+parted /dev/sdb
+mklabel mbr, gpt
+mkpart primary ext4 0% 50%
 
 # パーティションテーブルの状態を表示する
 fdisk -l
@@ -684,8 +702,51 @@ swapoffコマンド
 swapoff /dev/sdb1
 swapoff swap.file
 
+スワップ領域の推奨値
+RAM < 2GB -> RAMの2倍
+2GB < RAM < 8GB -> RAMと同量
+8GB < RAM < 64GB -> 4GBからRAM*0.5
+64GB < RAM -> 4GBくらい
 
 ファイルシステムのマウント
+mount -a, t, o <デバイス名> <マウントポイント>
+aは/etc/fastabにあるファイルシステム全て
+tはファイルシステムの種類を指定
+oはマウントオプション
+
+mount -t ext3 /dev/sdb1 /data
+
+/etc/fastabについて
+マウント/アンマウントをする頻度が多いものを記載
+
+/dev/sda2 /usr /ext4 defaults 1 2
+UUID=0898-00BA /mnt/usb vfat defaults 0 0
+・デバイスファイル名
+・マウントポイント
+・ファイルシステムの種類
+・マウントオプション
+・dumpフラグ　1は対象　0は対象外
+・fsckコマンド(ファイルシステムのチェック)をする順序　ルートファイルシステムは1
+
+マウントオプション
+async　ファイルシステムの非同期入出力を設定
+auto -aオプションの対象
+noauto -aオプションの対象でない
+defaults デフォルトのオプションasync, auto, exec, rw, nouser
+exec バイナリの実行を許可
+noexec　バイナリの実行を不許可
+ro　読み取り専用としてマウント
+rw　読み書き許可としてマウント
+user　一般ユーザがマウント可能
+users　マウントした人以外でもアンマウント可能
+nouser　ルートユーザーのみがマウント可能
+
+
+umount -a -t
+tはファイルシステムを指定してアンマウント
+umaunt /data
+umaunt -at btrfs
+
 
 
 
