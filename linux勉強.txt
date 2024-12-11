@@ -259,17 +259,17 @@ export 環境変数=値
 export -n 環境変数　#削除
 export -p #環境変数の表示
 
-## whatis ##
+## whatisコマンド ##
 
 man -f　と同じ
 
-## apropos ##
+## aproposコマンド ##
 
 man -k　と同じ
 
 
 権限
-
+## chmodコマンド　##
 chmod -R 755 test(ディレクトリ)
 Rを指定するとディレクトリ配下のパーミッションを変更できる
 
@@ -310,16 +310,20 @@ permはアクセス権
 locate <ファイル名>
 
 # 検索用のDBを更新する
+## updatedbコマンド ##
 updatedb 
 -eを指定するとデータベースから除外する
 
 # コマンドファイルの格納場所を表示
+## whichコマンド ##
 which <コマンド名>
 
 # コマンドのバイナリ、マニュアル、ソースファイルの場所を表示
+## whereisコマンド ##
 whereis -b,m,s <コマンド名>
 
 # エイリアス、組み込み関数？などを確認
+## typeコマンド ##
 type <コマンド名>
 
 
@@ -341,7 +345,7 @@ abc{2,9} 左の文字をn回からm回繰り返す   abccc,abcccc, abccccc, abcc
 
 # 指定した文字列を検索
 
-##grepコマンド ##
+## grepコマンド ##
 grep <文字列> (ファイル名)
 grep -c,f,i,n,v,E,F
 cは行数
@@ -357,15 +361,20 @@ grep -c hello aisatsu.txt
 grep -f hello.txt aisatsu.txt
 grep -inv "unko" unko.txt
 
-egrep 拡張正規表現を使うgrep
-fgrep 正規表現を使用しないgrep
+## egrepコマンド ##
+拡張正規表現を使うgrep
 
+## fgrepコマンド ##
+fgrep 正規表現を使用しないgrep
 
 ## wcコマンド ##
 wc -l,w,c
 lは行数 line
 wはワード数 word
 cは文字数 
+# 実行例　前からl, w, c 大きい順に表示される
+$ wc test.txt
+ 12  17 152 test.txt
 
 ## sedコマンド ##
 sed -e,f,i
@@ -394,10 +403,10 @@ LF \n # Linux,MacOSで使われる
 CR \r # 古いMacOSで使われる
 
 基本的にはLF(\n)が使われる
+Linuxだから"L"が付くと覚えよ
 
 
 vimの使用
-
 # テキストエディタの切り替え
 export EDITER=/usr/bin/vim
 
@@ -405,10 +414,9 @@ export EDITER=/usr/bin/vim
 :set nonu　行番号を非表示
 :set ts=4 Tabキーで挿入される空白の数を設定
 
-
 パッケージ管理
 
-# apt-getコマンド
+## apt-getコマンド ##
 apt-get -s,y
 sはシステムを変更せずにシミュレート
 yは自動的にyを入力
@@ -437,9 +445,9 @@ Components: main restricted universe multiverse
 Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
 --------------------------------------------
 
-# apt-cacheコマンド
+## apt-cacheコマンド ##
 apt-cache search,show,showpkg,depends
- apt-cache search tree
+apt-cache search tree
 searchはキーワードでパッケージを検索
 showはパッケージ情報の表示
 showpkgは指定したパッケージの被依存関係を含めた情報の表示
@@ -447,14 +455,14 @@ dependsはパッケージの依存パッケージを表示
 
 apt-cache showpkg
 
-# aptコマンド(推奨)
+## aptコマンド ## (推奨)
 apt -c,d,y, --reinstall
 サブコマンドはapt-get,apt-cacheと同じ
 cは設定ファイルの指定
 dはパッケージのダウンロードのみ
 yは自動でyを入力
 
-# apt-file
+## apt-fileコマンド ##
 apt-file update,search,find,list,show
 
 
@@ -465,11 +473,11 @@ sudo apt purge apt-file
 # パッケージのリスト
 apt list
 
-# dpkgコマンド
+## dpkgコマンド ##
 dpkg -E,G,R, 
-Eは同じバージョンがある場合はインストールしない
-Gは新しいバージョンがすでにインストールされている時はインストールしない
-Rディレクトリ内を再帰的に処理する 
+●Eは同じバージョンがある場合はインストールしない
+●Gは新しいバージョンがすでにインストールされている時はインストールしない
+●Rディレクトリ内を再帰的に処理する 
 
 アクション
 -i,r,P,l,S,L,s,C --unpack, --configure, --reconfigure
@@ -486,7 +494,7 @@ configureは展開されたパッケージを設定する
 reconfigureは指定したインストール済みのパッケージを再設定する
 
 
-# YUMコマンド
+## YUMコマンド ##
 yum install,remove,update,check-update,info,list,repolist,search,grouplist,groupinstall,localinstall,deplist
 update 指定したパッケージをアップデートする
 check-update インストールしたパッケージの中でアップデート待ちのものを表示
@@ -515,6 +523,7 @@ yum deplist <> # 指定したパッケージが依存しているパッケージ
 /etc/yum.repos.d　レポジトリの場所
 
 # RPMパッケージ管理
+## rpmコマンド ##
 rpm -i,U,F,v,h,--nodeps,--force,--test,e
 
 ##インストール・アップグレード
@@ -562,17 +571,15 @@ rpm -V　パッケージの検査　--verify
 -a --all　# 全て
 --nomd5 # md5によるファイルのかいざん検査をしない
 
-
-
- rpm -ivh <パッケージ>　インストール
- rpm -Uvh <パッケージ>　更新
- rpm -evh <パッケージ>　アンインストール
- rmp -e --nodeps <パッケージ>　依存関係を無視してアンインストール
- rpm -qa <パッケージ名>　インストール済みパッケージの一覧表示
- rpm -qi <パッケージ名>　情報表示
- rpm -ql <パッケージ名>　パッケージからインストールされたファイルを一覧表示
- rpm -Va
- rpm --verify --all
+rpm -ivh <パッケージ>　インストール
+rpm -Uvh <パッケージ>　更新
+rpm -evh <パッケージ>　アンインストール
+rmp -e --nodeps <パッケージ>　依存関係を無視してアンインストール
+rpm -qa <パッケージ名>　インストール済みパッケージの一覧表示
+rpm -qi <パッケージ名>　情報表示
+rpm -ql <パッケージ名>　パッケージからインストールされたファイルを一覧表示
+rpm -Va
+rpm --verify --all
 
 
 ハードウェア管理
@@ -589,12 +596,14 @@ rpm -V　パッケージの検査　--verify
 /sys
 
 # CPUの情報を表示
-lscpu
+## lscpuコマンド ##
 
 # pciデバイスの情報を詳細に表示
+## lspciコマンド ##
 lspci -v
 
 # usbデバイスの情報をツリー状に表示
+## lsusbコマンド ##
 lsusb -t
 
 # ホットプラグを可能にする　カーネルからの通知を受けてデバイスファイルを動的に作成する
@@ -602,6 +611,7 @@ udev(Userspace DEvice management)
 設定情報ファイルは/etc/udev/rules.dに配置される
 
 ロードされているカーネルモジュールの情報を表示するコマンド
+## lsmodコマンド ##
 lsmod
 
 # デバイスドライバをロード
@@ -621,7 +631,7 @@ Audio Class：スピーカー、マイクなど
 
 それぞれのデバイスクラスにはクラスドライバという汎用ドライバが用意されている。
 
-#fdiskコマンド
+## fdiskコマンド ##
 fdisk -l,n,d,p,t,a,w,q,m　<ディスク>
 lは一覧で表示
 nはパーティションの作成
@@ -635,23 +645,21 @@ mはヘルプメニューを表示
 
 fdisk /dev/sda
 
+# パーティションテーブルの状態を表示する
+fdisk -l
 
-# gdisk　GPTバージョンのfdisk
+## gdiskコマンド ##　GPTバージョンのfdisk
 
-# parted 変更がすぐに反映されるので注意
+## partedコマンド ## 変更がすぐに反映されるので注意
 parted /dev/sdb
 mklabel mbr, gpt
 mkpart primary ext4 0% 50%
 
-# パーティションテーブルの状態を表示する
-fdisk -l
-
 
 ファイルシステム
 
-ファイルシステムを作成
-
-mkfsコマンド
+# ファイルシステムを作成
+## mkfsコマンド ##
 mkfs -t,c
 tはファイルシステムの種類を指定する
 cは不良ブロックを検査する
@@ -659,8 +667,7 @@ cは不良ブロックを検査する
 mkfs -t ext2 /dev/sdb1
 
 
-mke2fsコマンド　ext2,ext3,ext4を作成可能
-
+## mke2fsコマンド ## ext2,ext3,ext4を作成可能
 mke2fs -t,j,c
 tはファイルシステムの指定
 jはext3を作成
@@ -668,15 +675,15 @@ cは不良ブロックを検査
 
 mke2fs -t ext4 /dec/sdb1
 
-btrfsファイルシステムの作成
-mkfs.btrfsコマンド　btrfsファイルシステムを作成
+# btrfsファイルシステムの作成
+## mkfs.btrfsコマンド ##　btrfsファイルシステムを作成
 
 mkfs.btrfs /dev/sdb1
 mkfs -t btrfs /dev/sdb1 と全く同じ
 mkfs -t btrfs　== mkfs.btrfs
 
-xfsファイルシステムの作成
-mkfs.xfsコマンド
+# xfsファイルシステムの作成
+## mkfs.xfsコマンド ##
 オプション
 xfs_info # 情報表示
 xfs_db # ファイルシステムのデバッグ
@@ -686,19 +693,19 @@ xfs_fsr # デフラグを実施
 xfs_repair # 検査・修復
 
 
-スワップ領域の作成
-mkswapコマンド　デバイス、ファイルを指定して作成が可能
+# スワップ領域の作成
+## mkswapコマンド ##　デバイス、ファイルを指定して作成が可能
 mkswap /dev/sdb1
 mkswap swap.file
 
-スワップ領域の有効化
-swaponコマンド
+# スワップ領域の有効化
+## swaponコマンド ##
 swapon /dev/sdb1
 swapon swap.file
 swapon -s # 有効化されているスワップファイルの一覧表示
 
-スワップ領域の無効化
-swapoffコマンド
+# スワップ領域の無効化
+## swapoffコマンド ##
 swapoff /dev/sdb1
 swapoff swap.file
 
@@ -708,7 +715,8 @@ RAM < 2GB -> RAMの2倍
 8GB < RAM < 64GB -> 4GBからRAM*0.5
 64GB < RAM -> 4GBくらい
 
-ファイルシステムのマウント
+# ファイルシステムのマウント
+## mountコマンド ##
 mount -a, t, o <デバイス名> <マウントポイント>
 aは/etc/fastabにあるファイルシステム全て
 tはファイルシステムの種類を指定
@@ -716,6 +724,9 @@ oはマウントオプション
 
 mount -t ext3 /dev/sdb1 /data
 mount -t ext3 -o ro /dev/sdb1 /data
+# /etc/fstabにエントリが追加されていれば、デバイス名とマウントポイントの片方だけでマウント可
+mount /dev/sdb1
+mount /data
 
 /etc/fastabについて
 マウント/アンマウントをする頻度が多いものを記載
@@ -736,21 +747,43 @@ noauto -aオプションの対象でない
 defaults デフォルトのオプションasync, auto, exec, rw, nouser
 exec バイナリの実行を許可
 noexec　バイナリの実行を不許可
-ro　読み取り専用としてマウント
+ro　読み取り専用としてマウント read only
 rw　読み書き許可としてマウント
 user　一般ユーザがマウント可能
 users　マウントした人以外でもアンマウント可能
 nouser　ルートユーザーのみがマウント可能
 
-
+## umountコマンド ##
 umount -a -t
+aは/etc/mtabに記載されているファイルシステムすべて
 tはファイルシステムを指定してアンマウント
 umaunt /data
+umaunt /dev/sda1
 umaunt -at btrfs
+umaunt -at xfs 
 
 df -h
 df -i
 
+# デバイスのUUIDを確認するコマンド
+## blkidコマンド ## ブロックIDと覚える
+blkid
+
+## lsblkコマンド ##
+lsblk --output NAME,UUID,FSTYPE
+
+# 現在マウントされているファイルシステムを確認できるコマンド
+mount
+cat /etc/mtab
+cat /proc/self/mounts
+cat /proc/mounts
+
+# ファイルシステムの種類
+ext2
+ext3
+ext4
+XFS 動的inode
+JFS 動的inode
 
 
 
