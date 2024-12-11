@@ -715,6 +715,7 @@ tはファイルシステムの種類を指定
 oはマウントオプション
 
 mount -t ext3 /dev/sdb1 /data
+mount -t ext3 -o ro /dev/sdb1 /data
 
 /etc/fastabについて
 マウント/アンマウントをする頻度が多いものを記載
