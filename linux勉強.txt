@@ -747,6 +747,9 @@ tはファイルシステムを指定してアンマウント
 umaunt /data
 umaunt -at btrfs
 
+df -h
+df -i
+
 
 
 
