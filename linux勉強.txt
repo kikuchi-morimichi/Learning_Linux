@@ -663,7 +663,9 @@ mkpart primary ext4 0% 50%
 mkfs -t,c
 tはファイルシステムの種類を指定する
 cは不良ブロックを検査する
+オプションを指定しない場合はデフォルトでext2が作成される
 
+mkfs /dev/sda1 # ext2が作成される
 mkfs -t ext2 /dev/sdb1
 
 
@@ -672,10 +674,14 @@ mke2fs -t,j,c
 tはファイルシステムの指定
 jはext3を作成
 cは不良ブロックを検査
+オプションを指定しない場合はデフォルトでext2が作成される
 
-mke2fs -t ext4 /dec/sdb1
+mke2fs /dev/sda1 # ext2が作成される
+mke2fs -t ext4 /dev/sdb1
+mke2fs -j /dev/sdb2 # ext3が作成される
+mke2fs -t ext4 -c /dev/sdb1
 
-# btrfsファイルシステムの作成
+# btrfsファイルシステムの作成　Btrfs(B-tree File System)
 ## mkfs.btrfsコマンド ##　btrfsファイルシステムを作成
 
 mkfs.btrfs /dev/sdb1
@@ -749,6 +755,7 @@ exec バイナリの実行を許可
 noexec　バイナリの実行を不許可
 ro　読み取り専用としてマウント read only
 rw　読み書き許可としてマウント
+suid SUID,SGIDを有効化
 user　一般ユーザがマウント可能
 users　マウントした人以外でもアンマウント可能
 nouser　ルートユーザーのみがマウント可能
