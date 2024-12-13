@@ -1,3 +1,28 @@
+## systemctlコマンド ##
+systemctl サブコマンド ユニット名
+
+サブコマンド　対象で分けて覚えるといいかも
+
+get-default	# デフォルトターゲットを表示
+set-default	# デフォルトターゲットを設定
+rescue		# レスキューモードに移行
+isolate		# 対象のUnitを起動
+list-unit-files	# Unit定義ファイルを一覧表示
+
+enable		# サービスの自動起動オン
+disable		# サービスの自動起動オフ
+in-active	# サービスの稼働確認
+reload		# サービスの設定ファイルを読み込む
+start		# サービスを起動
+stop 		# サービス停止
+restart		# サービスの再起動
+status		# サービスの状態を表示
+
+reboot		# システムを再起動
+poweroff	# システムを停止して電源オフ
+halt		# システムを停止してhaltにする
+
+
 ## manコマンド ##
 man -k,f
 kはキーワードに一部一致
