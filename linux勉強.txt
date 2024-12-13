@@ -1,4 +1,25 @@
+topコマンド
+
+psコマンド
+
+bgコマンド
+
+uptimeコマンド
+
+
 ## dockerコマンド ##
+docker run	#　コンテナを作成して起動
+docker start	#　コンテナを起動
+docker stop	#　コンテナを停止
+docker kill	#　コンテナを強制停止
+decker ps	#　コンテナの一覧表示
+docker rm	#　コンテナの削除
+docker attach	#　コンテナの標準出力に接続
+docker exec	#　コンテナでコマンドを実行
+docker login	#　Dockerレジストリにログイン
+docker pull	#　Docker hubからイメージをダウンロード
+docker push	#　Docker hubからイメージをアップロード
+docker images	#　イメージを一覧表示
 
 
 ## X Window Systemについて ##
