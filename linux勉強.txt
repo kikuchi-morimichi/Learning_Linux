@@ -1,3 +1,13 @@
+
+## X Window Systemについて ##
+Xサーバ		# ディスプレイ
+Xクライアント	# 実行環境
+1. アプリケーションの実行環境であるXクライアント上でDISPLAY変数を定義
+  export DISPLAY="[XサーバのIP]：ディスプレイ番号.スクリーン番号"
+  export DISPLAY="192.168.10.3:0.1"
+2. アプリを実行
+
+
 ## systemctlコマンド ##
 systemctl サブコマンド ユニット名
 
