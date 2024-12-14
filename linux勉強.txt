@@ -279,6 +279,11 @@ fmt -w 10 test.txt ?
 split -l 10 test.txt # 10行で分割
 split -b 
 split text.txt # 1000行で分割　デフォルト
+split -500 file # 出力ファイル名を指定しない場合
+-> xaa xab xac のようにxが先頭でaa,ab,ac...の順にファイル名が割り振られる
+
+split -500 file file2 # 出力ファイル名を"file2"にする
+-> file2aa file2ab file2ac のようにfile2を先頭にファイル名が割り振られる
 
 ファイルの内容を8進数、16進数で表示するコマンド
 ## odコマンド ##
