@@ -15,6 +15,15 @@ CONT=SIGCONT=18		# 一時停止プロセスの再開　イク(19)前に戻すの
 STOP=SIGSTOP=19		# 一時停止　イク(19)から一旦止めて…で覚える
 TSTP=SIGTSTP=20		# 端末から入力された一時停止　気合で覚える(1つくらいなら平気でしょ)
 
+# 以下はすべて同じ終了処理
+killall mycommand
+killall -s TERM mycommand
+killall -s SIGTERM mycommand
+killall -s 15 mycommand
+killall -TERM mycommand
+killall -SIGTERM mycommand
+killall -15 mycommand
+
 
 bgコマンド
 
