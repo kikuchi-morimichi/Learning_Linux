@@ -2,6 +2,10 @@
 exit
 logout(ctrl+D)
 
+## ファイル実行コマンド ##
+source
+bash
+
 topコマンド
 
 psコマンド
