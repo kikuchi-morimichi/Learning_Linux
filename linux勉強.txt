@@ -79,14 +79,12 @@ Sはサイズ順
 
 file操作
 
-
 fileコマンドでアクセス日時のみを変更可能
 "-test.txt"などの-が入るファイルを作成するには,--を入力するか、パスでファイルを指定する
 touch -- -test.txt
 touch ./-test.txt
 
 ## cpコマンド ##
-
 cp -f,i,p,r|R
 fはコピー先が上書き不可の場合、削除してコピー
 iは同名のファイルやディレクトリがある時に確認をする
@@ -97,9 +95,8 @@ r|R フォルダ配下全てコピー
 mkdir -m,p
 ●mはアクセス権をつける
 ●pは中間ディレクトリも作成
-
- mkdir -m 644 test
- mkdir -p test/test2/test3
+mkdir -m 644 test
+mkdir -p test/test2/test3
 
 
 ## rmdirコマンド ##
@@ -121,33 +118,39 @@ touch -mt 202412241200 test.txt
 
 ## ddコマンド ##
 デバイス間でのコピーに使うコマンド
- dd if=/dev/zero of=damyfile bs=1M count=10 ダミーファイルの作成
- dd id=test of=/dev/sdc　USBにファイルをコピー
+dd if=/dev/zero of=damyfile bs=1M count=10 ダミーファイルの作成
+dd id=test of=/dev/sdc　USBにファイルをコピー
 
 ・アーカイブコマンド
 ## tarコマンド ##
 tar -c,x,t,f,v,z,j,J <アーカイブファイル名>
-tはアーカイブの内容を標準出力
+●tはアーカイブの内容を標準出力
 vは処理内容を表示
 zはgzip
 jはbzip2
 Jはxz
 
- tar cvf test.txt test.txt.tar
- tar xvf tast.txt.tar
+tar cvf test.txt test.txt.tar
+tar xvf test.txt.tar
+tar tvfz test.txt.tar.gz
+-> gzipで圧縮したアーカイブファイルを展開して標準出力
+tar txfj test.txt.tar.xz
+tar txfJ test.txt.tar.bzip2
 
 
 ・圧縮コマンド
 ## gzipコマンド ##
 gzip -d,c,r
 dは展開
-cは元ファイルを残して標準出力
+●cは元ファイルを残して標準出力
 rはディレクトリ内のすべてのファイルをそれぞれ圧縮
 
- gzip test.txt
- gzip -c test.txt > test.txt.gz
- gzip -r test (testはディレクトリ)圧縮
- gzip -dr test (testはディレクトリ)展開
+gzip test.txt
+gzip -c test.txt > test.txt.gz
+gzip -r test (testはディレクトリ)圧縮
+gzip -dr test (testはディレクトリ)展開
+gzip -cd test.tar.gz | tar ftv -
+-> gzipを解凍して標準出力したあと、-で受けとった出力をtarコマンドの-tオプションで表示
 
 ## xzコマンド ##
 xz -d,k,l
@@ -305,15 +308,15 @@ env
 printenv
 
 代表的な環境変数
-HISTFILE
-HISTSIZE
-HISTFILESIZE
-HOSTNAME
-HOME
-LANG
-PATH
-PWD
-USER
+HISTFILE	#
+HISTSIZE	#
+HISTFILESIZE	#
+HOSTNAME	# ホストネーム
+HOME		# 
+LANG		# 言語
+PATH		# 
+PWD		#
+USER		#
 
 ## unsetコマンド ##
 unset 変数名
@@ -324,16 +327,15 @@ unset 変数名
 declare -x 環境変数=値
 
 ## exportコマンド ##
+export n, p
 export 環境変数=値
 export -n 環境変数　#削除
 export -p #環境変数の表示
 
 ## whatisコマンド ##
-
 man -f　と同じ
 
 ## aproposコマンド ##
-
 man -k　と同じ
 
 
