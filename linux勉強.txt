@@ -1,3 +1,7 @@
+## SSH接続のログアウトコマンド ##
+exit
+logout(ctrl+D)
+
 topコマンド
 
 psコマンド
