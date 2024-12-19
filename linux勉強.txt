@@ -332,9 +332,9 @@ split -500 file file2 # 出力ファイル名を"file2"にする
 ファイルの内容を8進数、16進数で表示するコマンド
 ## odコマンド ##
 od test.txt
-od -o test.txt 8進数表示
+od -o test.txt 8進数表示　8は0が2つで覚える
 od -x test.txt # 16進数表示
-od -c test.txt # ASCII表示
+od -c test.txt # ASCII表示 ASCIIのCと覚える
 od -t oバイト数 test.txt # 8進数バイト区切りで表示
 od -t xバイト数 test.txt # 16進数バイト区切りで表示
 od -t c test.txt # ASCII文字で表示
