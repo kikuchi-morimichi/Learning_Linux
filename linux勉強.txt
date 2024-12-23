@@ -100,9 +100,11 @@ halt		# システムを停止してhaltにする
 
 
 ## manコマンド ##
-man -k,f
+man -k,f,w,a
 kはキーワードに一部一致
 fは完全一致
+wはマニュアルが格納されているディレクトリを表示
+aは全てのセクションを表示
 
 # セクション番号
 
@@ -343,10 +345,10 @@ od -t c test.txt # ASCII文字で表示
 pasteコマンド
 
 環境変数を表示するコマンド　暗記
-set
-declare
-env
-printenv
+set		# 全てのshell変数、環境変数を表示
+declare		# 全てのshell変数、環境変数を表示
+env		# 全ての環境変数を表示
+printenv	# 指定、または全ての環境変数を表示
 
 代表的な環境変数
 HISTFILE	#
@@ -368,16 +370,20 @@ unset 変数名
 declare -x 環境変数=値
 
 ## exportコマンド ##
-export n, p
+export -n, p
 export 環境変数=値
-export -n 環境変数　#削除
-export -p #環境変数の表示
+●export -n 環境変数　#削除
+●export -p #環境変数の表示
 
 ## whatisコマンド ##
 man -f　と同じ
+キーワードに完全一致するマニュアルを表示
+whatisデータベースとは、オンラインマニュアルページ(manページ)に関する情報を蓄積するデータベースのこと
+makewhatisコマンドを実行することで作成、または更新されます。
 
 ## aproposコマンド ##
 man -k　と同じ
+キーワードに部分一致するマニュアルを表示
 
 
 権限
