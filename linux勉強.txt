@@ -1,3 +1,11 @@
+コマンドの練習方法
+echo "aaa:bbb:ccc:ddd:111:222:333" >> mori.txt
+
+
+||
+&&
+
+
 ## SSH接続のログアウトコマンド ##
 exit
 logout(ctrl+D)
@@ -247,7 +255,7 @@ xargs -a
 標準出力からのみ受け付ける
 tr -d,s
 dは指定した文字を削除
-sは連続した文字を1文字に置き換える
+●sは連続した文字を1文字に置き換える
 tr -s [:space:] < test.txt　# スペースを1つに置き換える
 cat test.txt | tr -s [:space:] # スペースを1つに置き換える
 
@@ -270,21 +278,26 @@ sort -k 2 -n -t : test.txt # :で区切った時の2番目のフィールドで�
 重複行をまとめるコマンド
 ## uniqコマンド ##
 uniq text.txt newfile.txt # 重複した行をまとめて出力
-uniq -d text.txt # 重複行のみ表示
-uniq -u text.txt # 重複していない行のみ表示
+●uniq -d text.txt # 重複行のみ表示
+●uniq -u text.txt # 重複していない行のみ表示
 
 ## prコマンド ## 印刷データ
-pr -l,h,+
+pr -l,h,+開始:終了
 lは行数指定
-hはヘッダも字列
+hはヘッダ文字列
 +は開始ページ、:は終了ページ
 pr -l 30 +1:2 test.txt # 30行で1ページ、1,2ページを表示
+
+## catコマンド ##
+cat -b,n
+cat -b file # bはブランクのこと？空行を除いて行番号をつける
+cat -n file # 全部に行番号をつける
 
 ファイルに行番号をつける
 ## nlコマンド ##　ナンバーライン？？
 nl test.txt # 空行は除く
 nl -b a test.txt # 空行にも番号　allのこと
-nl -b t test.txt # 空行は除く　デフォルト
+●nl -b t test.txt # 空行は除く　デフォルト
 ●cat -b test.txt # 空行は除く
 ●cat -n test.txt # 空行にも番号　
 
@@ -337,7 +350,7 @@ fmt test.txt		# 1行あたり75文字に整形 デフォルト
 指定サイズでファイルを分割するコマンド
 ## splitコマンド ##
 split -l 10 test.txt # 10行で分割
-split -b 
+split -b # バイト数を指定して分割
 split text.txt # 1000行で分割　デフォルト
 split -500 file # 出力ファイル名を指定しない場合
 -> xaa xab xac のようにxが先頭でaa,ab,ac...の順にファイル名が割り振られる
