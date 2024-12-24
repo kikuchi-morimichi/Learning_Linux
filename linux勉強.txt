@@ -382,15 +382,15 @@ env		# 全ての環境変数を表示
 printenv	# 指定、または全ての環境変数を表示
 
 代表的な環境変数
-HISTFILE	#
-HISTSIZE	#
-HISTFILESIZE	#
-HOSTNAME	# ホストネーム
-HOME		# 
-LANG		# 言語
-PATH		# 
-PWD		#
-USER		#
+HISTFILE	# コマンド履歴のファイルパス
+HISTSIZE	# シェルでのコマンド履歴の保存数
+HISTFILESIZE	# コマンド履歴保存ファイルの保存数
+HOSTNAME	# ホスト名
+HOME		# ユーザのホームディレクトリ
+LANG		# ロケール(言語)
+PATH		# コマンド等のパス
+PWD		# カレントディレクトリ
+USER		# ログイン中のユーザ
 
 ## unsetコマンド ##
 unset 変数名
