@@ -324,6 +324,7 @@ unexpand -t 1 test.txt
 指定したフィールドを切り出して表示するコマンド
 ## cutコマンド ##
 cut -c, d, f	# --characters,--delimiter,--fields
+cは文字数
 cut -c 2 test.txt # 各行の2文字目を取り出す
 ●cut -d : -f 1 /etc/passwd　# 各行を:で区切った1つ目のフィールドを抜き出し
 dが区切り文字、fがフィールド番号
@@ -355,7 +356,10 @@ od -t xバイト数 test.txt # 16進数バイト区切りで表示
 od -t c test.txt # ASCII文字で表示
 
 
-pasteコマンド
+## pasteコマンド ##
+paste -d <区切り文字> file1 file2
+paste -d : file1 file2	# file1とfile2の各行を:で区切って結合する
+
 
 環境変数を表示するコマンド　暗記
 set		# 全てのshell変数、環境変数を表示
