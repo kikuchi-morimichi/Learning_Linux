@@ -5,6 +5,8 @@ echo "aaa:bbb:ccc:ddd:111:222:333" >> mori.txt
 ||
 &&
 
+history
+.bash_history
 
 ## SSH接続のログアウトコマンド ##
 exit
