@@ -1,0 +1,68 @@
+VCP-DCV
+
+
+vSphere FT
+vSphere Auto Deploy
+ステートレスモード
+ステートレスキャッシュ
+ステートフルインストール
+VMware Skyline
+Skyline健全性
+Skyline Collector
+Skyline Advisor
+Skyline Log Assist
+
+
+
+vvol
+
+vSphereのセキュリティ技術
+
+・ESXiのセキュリティ
+
+ロックダウンモード
+　ホストへの接続を制限する　ssh/hostclient, dcui,vCenter
+
+UEFIセキュアブート
+　ホスト起動時にVIB,ブートイメージの検証を行う機能
+　要件
+　・vSphere6.5以降
+　・TPM搭載
+　・FWがUEFI
+
+Intel SGX
+　IntelCPUに搭載されているセキュリティ機能
+　エンクレーブという隔離されたメモリ領域を使用することでマルウェア等から守る
+　要件
+　・Coffee Lake(8世代)以上
+　・FWでSGXが有効
+　・仮想マシンのハードウェアバージョンが17以降
+　制限
+　・vMotion/DRSができない
+　・仮想マシンのサスペンド、レジューム
+　・仮想マシンスナップショット(メモリ含む)
+　・vSphereFT
+
+・仮想マシンのセキュリティ
+
+仮想マシンの暗号化
+
+Proactive HA
+ 制限
+　・
+
+ストレージマルチパス　P84
+
+Lifecycle Manager P294
+
+RDMA P54
+
+ホストプロファイル　P301
+
+DRS P260
+自動化のレベル
+　
+
+
+
+
