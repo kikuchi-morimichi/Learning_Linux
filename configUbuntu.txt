@@ -82,4 +82,84 @@ sudo ufw allow from 192.168.3.0/24 to any port 22
 
 # windowsからRDP接続する　pro以上が必要
 
+# locateコマンドを使えるようにする
+sudo apt install plocate
 
+
+# node.jsのインストール
+
+sudo apt -y update
+sudo apt -yV upgrade
+sudo /sbin/shutdown -r now
+# curlのインストール
+sudo apt -y install curl
+# nvmのインストール
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+source ~/.profile
+# node.jsのインストール
+nvm ls-remote
+nvm install 23.6.0
+nvm list
+nvm use 23.6.0
+
+# firebase cliのインストール
+npm install -g firebase-tools
+# firebaseへのログイン
+firebase login
+# プロジェクトの表示
+firebase projects:list
+
+
+# gitの設定
+sudo apt update
+sudo apt install git
+
+git --version
+git config --global user.name "kikuchi"
+git config --global user.email kikkun419themoss@gmail.com
+
+git config  --global core.autocrlf false
+git config  --global core.quotepath false
+
+## ssh接続の準備 ##
+# opensshクライアントのインストール
+sudo apt install openssh-client
+
+# ssh用の鍵を作成　全部エンター押下で良い
+ssh-keygen -t ed25519 -C "kikkun419themoss@gmail.com"
+
+# 鍵ができていることを確認
+morimichi@morimichi-MS-7C95:~/.ssh$ ls /home/morimichi/.ssh/
+authorized_keys  id_ed25519  id_ed25519.pub
+
+# 公開鍵を表示してコピー　→　githubのssh鍵に登録
+cat /home/morimichi/.ssh/id_ed25519.pub
+
+# SSHエージェントを起動　いらないかも
+eval "$(ssh-agent -s)"
+# 秘密鍵をSSHエージェントに追加　いらないかも
+ssh-add ~/.ssh/id_ed25519
+Identity added: /home/morimichi/.ssh/id_ed25519 (kikkun419themoss@gmail.com)
+
+# sshでクローン
+git clone -b kikuchi_branch git@github.com:kikuchi-morimichi/bio_PJ.git
+
+# クローンしたディレクトリに移動
+cd <プロジェクト名>
+
+# リモートレポジトリを表示
+git remote -v
+
+# ブランチ名や、ステータスを表示
+git status
+
+# ステージング
+git add .
+git status
+
+# コミット
+git commit -m "update: bio_PJ_Kikuchi.txt v3"
+git status
+
+# プッシュ
+git push origin kikuchi_branch
