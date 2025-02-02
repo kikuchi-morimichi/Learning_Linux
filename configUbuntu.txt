@@ -93,19 +93,34 @@ sudo apt -yV upgrade
 sudo /sbin/shutdown -r now
 # curlのインストール
 sudo apt -y install curl
+
 # nvmのインストール
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
 source ~/.profile
+
 # node.jsのインストール
 nvm ls-remote
 nvm install 23.6.0
+nvm install 22.13.1  
+nvm install 12.22.12　# これを採用
 nvm list
 nvm use 23.6.0
+nvm use 22.13.1 
+nvm use 12.22.12　# これを採用
+nvm uninstall 23.6.0
+nvm uninstall 22.13.1
+nvm alias default v22.13.1
+
+# AngularCliのインストール
+npm install -g @angular/cli
+npm install -g @angular/cli@10.0.4
 
 # firebase cliのインストール
 npm install -g firebase-tools
+
 # firebaseへのログイン
 firebase login
+
 # プロジェクトの表示
 firebase projects:list
 
@@ -158,8 +173,8 @@ git add .
 git status
 
 # コミット
-git commit -m "update: bio_PJ_Kikuchi.txt v3"
+git commit -m "add: .firebaserc, .github/,.gitignore, firebase.json, public/"
 git status
 
 # プッシュ
-git push origin kikuchi_branch
+git push origin main
