@@ -102,14 +102,17 @@ source ~/.profile
 nvm ls-remote
 nvm install 23.6.0
 nvm install 22.13.1  
-nvm install 12.22.12　# これを採用
+nvm install 20.11.1　# これを採用
+nvm install 18.17.0
 nvm list
 nvm use 23.6.0
 nvm use 22.13.1 
 nvm use 12.22.12　# これを採用
-nvm uninstall 23.6.0
+nvm use 18.17.0
+nvm uninstall 12.22.12
 nvm uninstall 22.13.1
 nvm alias default v22.13.1
+nvm alias default v20.11.1
 
 # AngularCliのインストール
 npm install -g @angular/cli
@@ -158,6 +161,7 @@ Identity added: /home/morimichi/.ssh/id_ed25519 (kikkun419themoss@gmail.com)
 
 # sshでクローン
 git clone -b kikuchi_branch git@github.com:kikuchi-morimichi/bio_PJ.git
+git clone git@github.com:kikuchi-morimichi/Bio-IT-Project.git
 
 # クローンしたディレクトリに移動
 cd <プロジェクト名>
@@ -173,8 +177,67 @@ git add .
 git status
 
 # コミット
-git commit -m "add: .firebaserc, .github/,.gitignore, firebase.json, public/"
+git commit -m "add: kikuchi.html, sato.html, bootstrapによるナビゲーションバーを追加、ナビゲーションバーからそれぞれのページに遷移できるようにしました。"
 git status
 
 # プッシュ
 git push origin main
+git push origin kikuchi_branch
+
+# javaのインストール
+
+apt-cache search openjdk
+
+sudo apt update
+# インストール
+sudo apt install openjdk-17-jdk
+java -version
+
+# インストール済みのjavaを確認
+update-alternatives --list java
+update-alternatives --list javac
+
+# デフォルトで使用するjavaを選択
+sudo update-alternatives --config java
+
+
+# mySQLのインストール
+mysql --version
+sudo apt update
+sudo apt install mysql-server-8.0
+mysql --version
+# 起動
+sudo service mysql start
+# ログイン
+sudo mysql -u root
+
+CREATE DATABASE person;
+USE person;
+
+SHOW DATABASES;
+SHOW TABLES;
+
+# テーブル作成
+CREATE TABLE persons (
+    id INT NOT NULL AUTO_INCREMENT,
+    name VARCHAR(255) NOT NULL,
+    birthdate DATE NOT NULL,
+    height INT NOT NULL,
+    weight INT NOT NULL,
+    PRIMARY KEY (id)
+);
+# データ挿入
+INSERT INTO persons (id, name, birthdate, height, weight) VALUES
+  (1, 'John Lennon', '1940-10-09', 180, 77),
+  (2, 'Paul McCartney', '1942-06-18', 175, 65),
+  (3, 'George Harrison', '1943-02-25', 190, 80),
+  (4, 'Ringo Starr', '1940-07-07', 188, 78);
+  
+  
+  exit;
+  
+
+
+
+# virtual Boxのインストール
+sudo apt install virtualbox
