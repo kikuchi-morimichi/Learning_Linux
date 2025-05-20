@@ -1,3 +1,6 @@
+[参考]
+https://techdocs.broadcom.com/jp/ja/vmware-cis/vsphere/vsphere/8-0/create-an-installer-iso-image-with-a-custom-installation-or-upgrade-script.html#GUID-C03EADEA-A192-4AB4-9B71-9256A9CB1F9C-en
+
 mkdir esx_cdrom_mount
 mkdir esx_cdrom
 sudo mount -o loop VMware-VMvisor-Installer-8.0U3e-24677879.x86_64.iso ~/esx_cdrom_mount
