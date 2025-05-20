@@ -1,0 +1,74 @@
+mkdir esx_cdrom_mount
+mkdir esx_cdrom
+sudo mount -o loop VMware-VMvisor-Installer-8.0U3e-24677879.x86_64.iso ~/esx_cdrom_mount
+cp -r esx_cdrom_mount/* esx_cdrom
+
+KS_CUST.CFGを作成しておく
+以下例
+----------------------------
+# Accept the VMware End User License Agreement
+vmaccepteula
+
+# Set the root password for the DCUI and Tech Support Mode
+rootpw P@ssw0rd
+#rootpw --iscrypted XXXX～(省略)～XXXX
+
+# Install on the first local disk available on machine
+install --firstdisk --overwritevmfs
+
+# Keyboard type
+keyboard Japanese
+
+# Set the network
+#network --bootproto=dhcp --device=vmnic0
+network --bootproto=static --ip=192.168.10.2 --netmask=255.255.255.0 --gateway=192.168.10.254 --nameserver=192.168.10.253 --device=vmnic0 --hostname=morimichi-esxi
+
+# Reboot after installation
+reboot
+
+%firstboot --interpreter=busybox
+
+# Enable ssh
+# vim-cmd hostsvc/enable_ssh
+# vim-cmd hostsvc/start_ssh
+
+# Enable ESXi Shell
+# vim-cmd hostsvc/enable_esx_shell
+# vim-cmd hostsvc/start_esx_shell
+
+# Suppress Shell Warning
+# esxcli system settings advanced set -o /UserVars/SuppressShellWarning -i 1
+
+# Enable NTP
+echo 'server 192.168.10.253 iburst' >> /etc/ntp.conf
+chkconfig ntpd on
+/etc/init.d/ntpd start
+
+# Disable IPv6
+# esxcli system module parameters set -m tcpip4 -p ipv6=0 
+
+reboot
+----------------------------
+
+# キックスタートファイルを格納
+cp KS_CUST.CFG esx_cdrom
+
+# 以下のBootファイルを編集
+esx_cdrom/efi/boot/boot.cfg（UEFI ブートの場合）
+esx_cdrom/boot.cfg
+編集権限を追加しておく
+chmod u+w esx_cdrom/efi/boot/boot.cfg
+chmod u+w esx_cdrom/boot.cfg
+
+# 以下を書き換える
+----------------------------
+kernelopt=runweasel ks=cdrom:/KS_CUST.CFG
+----------------------------
+
+# genisoimageをインストール
+sudo apt install genisoimage
+
+# 以下のコマンドを実行してカスタムISOを作成
+chmod u+w esx_cdrom/isolinux.bin
+genisoimage -relaxed-filenames -J -R -o custom_esx.iso -b isolinux.bin -c boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table -eltorito-alt-boot -e efiboot.img -no-emul-boot ~/esx_cdrom
+
