@@ -1,0 +1,434 @@
+Section 1 - IT Architectures, Technologies, Standards
+セクション 1 - ITアーキテクチャ、技術、標準
+
+NO TESTABLE OBJECTIVES IN THIS SECTION
+このセクションには試験対象の目標はありません。
+
+Section 2 - VMware by Broadcom Solution
+セクション 2 - Broadcom社提供のVMwareソリューション
+
+Objective 2.1 - Identify the VMware Cloud Foundation components (vSphere, vSAN, NSX) and architecture (including stretched).
+目標 2.1 - VMware Cloud Foundationのコンポーネント（vSphere、vSAN、NSX）およびアーキテクチャ（ストレッチクラスタを含む）を識別する。
+
+Objective 2.2 - Describe the requirements for implementing private cloud solutions based on VMware Cloud Foundation.
+目標 2.2 - VMware Cloud Foundationに基づくプライベートクラウドソリューション実装の要件を説明する。
+
+Objective 2.3 - Identify the use cases for the different components of the VMware Aria Suite (including VMware Aria Operations for Networks).
+目標 2.3 - VMware Aria Suiteの各コンポーネント（VMware Aria Operations for Networksを含む）のユースケースを識別する。
+
+Objective 2.4 - Identify the use cases for vSphere Supervisor based on VMware Cloud Foundation.
+目標 2.4 - VMware Cloud Foundationに基づくvSphere Supervisorのユースケースを識別する。
+
+Objective 2.5 - Identify the use cases for Data Services Manager
+目標 2.5 - Data Services Managerのユースケースを識別する。
+
+Objective 2.6 - Identify the use cases for VMware Cloud Foundation Add-Ons.
+目標 2.6 - VMware Cloud Foundation Add-Onsのユースケースを識別する。
+
+Section 3 - Plan and Design the VMware by Broadcom Solution
+セクション 3 - Broadcom社提供のVMwareソリューションの計画と設計
+
+NO TESTABLE OBJECTIVES IN THIS SECTION
+このセクションには試験対象の目標はありません。
+
+Section 4 - Install, Configure, Administrate the VMware by Broadcom Solution
+セクション 4 - Broadcom社提供のVMwareソリューションのインストール、構成、管理
+
+Objective 4.1 - Identify the installation and configuration process (bring-up) for VMware Cloud Foundation components.
+目標 4.1 - VMware Cloud Foundationコンポーネントのインストールおよび構成プロセス（ブリングアップ）を識別する。
+
+Objective 4.2 - Deploy and configure a VMware Cloud Foundation management domain.
+目標 4.2 - VMware Cloud Foundation管理ドメインを展開し構成する。
+
+Objective 4.2.1 - Deploy and configure a VMware Cloud Foundation management domain using VMware Cloud Builder.
+目標 4.2.1 - VMware Cloud Builderを使用してVMware Cloud Foundation管理ドメインを展開し構成する。
+
+Objective 4.2.2 - Configure the VMware Cloud Foundation management domain.
+目標 4.2.2 - VMware Cloud Foundation管理ドメインを構成する。
+
+Objective 4.3 - Deploy and configure an NSX Edge Cluster.
+目標 4.3 - NSX Edgeクラスタを展開し構成する。
+
+Objective 4.3.1 - Validate the prerequisites for deploying an NSX Edge cluster.
+目標 4.3.1 - NSX Edgeクラスタ展開の前提条件を検証する。
+
+Objective 4.3.2 - Scale an NSX Edge cluster by adding or removing Edge Transport Nodes.
+目標 4.3.2 - Edge Transport Nodeの追加または削除によりNSX Edgeクラスタをスケールする。
+
+Objective 4.3.3 - Given a scenario, identify the role of BGP in route propagation with an NSX Edge cluster.
+目標 4.3.3 - シナリオに基づき、NSX Edgeクラスタにおけるルート伝播でのBGPの役割を識別する。
+
+Objective 4.4 - Deploy VMware Aria Suite Lifecycle using SDDC Manager.
+目標 4.4 - SDDC Managerを使用してVMware Aria Suite Lifecycleを展開する。
+
+Objective 4.4.1 - Validate the prerequisites for deploying Aria Suite Lifecycle.
+目標 4.4.1 - Aria Suite Lifecycle展開の前提条件を検証する。
+
+Objective 4.4.2 - Create Application Virtual Networks (AVNs) in preparation for deploying the VMware Aria Suite.
+目標 4.4.2 - VMware Aria Suite展開準備としてアプリケーション仮想ネットワーク（AVN）を作成する。
+
+Objective 4.4.3 - Complete a basic configuration of VMware Aria Suite Lifecycle.
+目標 4.4.3 - VMware Aria Suite Lifecycleの基本構成を完了する。
+
+Objective 4.5 - Deploy VMware Aria Suite using VMware Aria Suite Lifecycle.
+目標 4.5 - VMware Aria Suite Lifecycleを使用してVMware Aria Suiteを展開する。
+
+Objective 4.5.1 - Validate the prerequisites for deploying the VMware Aria Suite.
+目標 4.5.1 - VMware Aria Suite展開の前提条件を検証する。
+
+Objective 4.5.2 - Deploy VMware Aria Suite.
+目標 4.5.2 - VMware Aria Suiteを展開する。
+
+Objective 4.6 - Deploy and configure a virtual infrastructure (VI) workload domain using SDDC Manager.
+目標 4.6 - SDDC Managerを使用して仮想インフラストラクチャ（VI）ワークロードドメインを展開および構成する。
+
+Objective 4.6.1 - Validate the prerequisites for deploying a VI workload domain.
+目標 4.6.1 - VIワークロードドメイン展開の前提条件を検証する。
+
+Objective 4.6.2 - Identify the steps for deploying a VI workload domain.
+目標 4.6.2 - VIワークロードドメイン展開の手順を識別する。
+
+Objective 4.6.3 - Deploy a VI workload domain using SDDC Manager.
+目標 4.6.3 - SDDC Managerを使用してVIワークロードドメインを展開する。
+
+Objective 4.7 - Enable vSphere Supervisor (Workload Management) within VMware Cloud Foundation.
+目標 4.7 - VMware Cloud Foundation内でvSphere Supervisor（ワークロード管理）を有効化する。
+
+Objective 4.7.1 - Identify the prerequisites for enabling workload management.
+目標 4.7.1 - ワークロード管理を有効にするための前提条件を識別する。
+
+Objective 4.8 - Create and configure a vSphere Namespace
+目標 4.8 - vSphere Namespaceを作成し構成する。
+
+Objective 4.8.1 - Download the vSphere CLI tools to a developer workstation.
+目標 4.8.1 - 開発者ワークステーションにvSphere CLIツールをダウンロードする。
+
+Objective 4.9 - Deploy stretched clusters across availability zones for VMware Cloud Foundation.
+目標 4.9 - VMware Cloud Foundationのためにアベイラビリティゾーン間でストレッチクラスタを展開する。
+
+Objective 4.9.1 - Validate the requirements for deploying stretched clusters.
+目標 4.9.1 - ストレッチクラスタ展開の要件を検証する。
+
+Objective 4.9.2 - Identify the procedure for deploying stretched clusters.
+目標 4.9.2 - ストレッチクラスタ展開の手順を識別する。
+
+Objective 4.10 - Deploy and manage VMware Cloud Foundation using the VMware Cloud Foundation APIs.
+目標 4.10 - VMware Cloud Foundation APIを使用してVMware Cloud Foundationを展開および管理する。
+
+Objective 4.11 - Given a scenario, scale a VMware Cloud Foundation deployment.
+目標 4.11 - シナリオに基づき、VMware Cloud Foundationの展開をスケールする。
+
+Objective 4.11.1 - Validate the prerequisites for host commissioning.
+目標 4.11.1 - ホストのコミッショニングに関する前提条件を検証する。
+
+Objective 4.11.2 - Add hosts using host commissioning.
+目標 4.11.2 - ホストコミッショニングを使用してホストを追加する。
+
+Objective 4.11.3 - Remove hosts using host decommissioning.
+目標 4.11.3 - ホストのディコミッショニングを使用してホストを削除する。
+
+Objective 4.11.4 - Scale a cluster within VMware Cloud Foundation.
+目標 4.11.4 - VMware Cloud Foundation内でクラスタをスケールする。
+
+Objective 4.11.5 - Scale a VMware Cloud Foundation domain.
+目標 4.11.5 - VMware Cloud Foundationドメインをスケールする。
+
+Objective 4.11.6 - Scale a VMware Cloud Foundation deployment with a workload domain.
+目標 4.11.6 - ワークロードドメインを含むVMware Cloud Foundation展開をスケールする。
+
+Objective 4.12 - Given a scenario, perform Day 2 Operations within VMware Cloud Foundation SDDC Manager.
+目標 4.12 - シナリオに基づき、VMware Cloud Foundation SDDC Manager内でDay 2オペレーションを実行する。
+
+Objective 4.12.1 - Implement backup and recovery strategies for VMware Cloud Foundation components.
+目標 4.12.1 - VMware Cloud Foundationコンポーネントのバックアップおよびリカバリ戦略を実装する。
+
+Objective 4.12.2 - Perform lifecycle management for VMware Cloud Foundation components.
+目標 4.12.2 - VMware Cloud Foundationコンポーネントのライフサイクル管理を実行する。
+
+Objective 4.12.3 - Perform update, rotate, and sync for passwords managed by the SDDC Manager.
+目標 4.12.3 - SDDC Managerで管理されるパスワードの更新、ローテーション、同期を実行する。
+
+Objective 4.12.4 - Perform rotation of certificates managed by the SDDC Manager.
+目標 4.12.4 - SDDC Managerで管理される証明書のローテーションを実行する。
+
+Objective 4.12.5 - Upgrade VMware Cloud Foundation.
+目標 4.12.5 - VMware Cloud Foundationをアップグレードする。
+
+Objective 4.13 - Given a scenario, perform Day 2 Operations within VMware vCenter.
+目標 4.13 - シナリオに基づき、VMware vCenter内でDay 2オペレーションを実行する。
+
+Objective 4.13.1 - Given a scenario, configure Role-based Access Control to vCenter.
+目標 4.13.1 - シナリオに基づき、vCenterへの役割ベースアクセス制御を構成する。
+
+Objective 4.14 - Given a scenario, manage the lifecycle of a virtual machine.
+目標 4.14 - シナリオに基づき、仮想マシンのライフサイクルを管理する。
+
+Objective 4.14.1 - Create a virtual machine template.
+目標 4.14.1 - 仮想マシンテンプレートを作成する。
+
+Objective 4.14.2 - Create a virtual machine from a VM template.
+目標 4.14.2 - VMテンプレートから仮想マシンを作成する。
+
+Objective 4.14.3 - Create a virtual machine from an ISO/OVA.
+目標 4.14.3 - ISO/OVAから仮想マシンを作成する。
+
+Objective 4.14.4 - Destroy a virtual machine.
+目標 4.14.4 - 仮想マシンを破棄する。
+
+Objective 4.14.5 - Given a scenario, manage virtual machine snapshots
+目標 4.14.5 - シナリオに基づき、仮想マシンスナップショットを管理する。
+
+Objective 4.14.6 - Given a scenario, complete Day 2 Operations on a virtual machine.
+目標 4.14.6 - シナリオに基づき、仮想マシンのDay 2オペレーションを完了する。
+
+Objective 4.15 - Given a scenario, configure vSphere Networking components
+目標 4.15 - シナリオに基づき、vSphereネットワーキングコンポーネントを構成する。
+
+Objective 4.15.1 - Configure a Virtual Distributed Switch.
+目標 4.15.1 - 仮想分散スイッチ（VDS）を構成する。
+
+Objective 4.15.2 - Configure Network IO Control.
+目標 4.15.2 - ネットワークIOコントロールを構成する。
+
+Objective 4.15.3 - Configure a Port Group.
+目標 4.15.3 - ポートグループを構成する。
+
+Objective 4.16 - Given a scenario, configure Content Libraries to manage resources.
+目標 4.16 - シナリオに基づき、リソース管理のためにコンテンツライブラリを構成する。
+
+Objective 4.16.1 - Create a Content Library.
+目標 4.16.1 - コンテンツライブラリを作成する。
+
+Objective 4.16.2 - Publish a Content Library.
+目標 4.16.2 - コンテンツライブラリを公開する。
+
+Objective 4.16.3 - Subscribe to a Content Library.
+目標 4.16.3 - コンテンツライブラリを購読する。
+
+Objective 4.17 - Given a scenario, configure vSphere storage components
+目標 4.17 - シナリオに基づき、vSphereストレージコンポーネントを構成する。
+
+Objective 4.17.1 - Given a scenario, configure VM storage policies.
+目標 4.17.1 - シナリオに基づき、VMストレージポリシーを構成する。
+
+Objective 4.18 - Given a scenario, manage ESXi hosts
+目標 4.18 - シナリオに基づき、ESXiホストを管理する。
+
+Objective 4.18.1 - Given a scenario, manage the host lifecycle using VMware Lifecyle Manager images.
+目標 4.18.1 - シナリオに基づき、VMware Lifecycle Managerイメージを使用してホストライフサイクルを管理する。
+
+Objective 4.18.2 - Given a scenario, secure an ESXi host.
+目標 4.18.2 - シナリオに基づき、ESXiホストをセキュアにする。
+
+Objective 4.18.3 - Given a scenario, configure an ESXi host and the host profile.
+目標 4.18.3 - シナリオに基づき、ESXiホストとホストプロファイルを構成する。
+
+Objective 4.19 - Given a scenario, secure workloads and infrastructure using encryption.
+目標 4.19 - シナリオに基づき、暗号化を使ってワークロードとインフラをセキュアにする。
+
+Objective 4.19.1 - Given a scenario, identify how to secure workloads using Virtual Machine Encryption.
+目標 4.19.1 - シナリオに基づき、仮想マシン暗号化を使ってワークロードをセキュアにする方法を識別する。
+
+Objective 4.19.2 - Given a scenario, identify how to secure workloads using host-based encryption.
+目標 4.19.2 - シナリオに基づき、ホストベース暗号化を使ってワークロードをセキュアにする方法を識別する。
+
+Objective 4.19.3 - Given a scenario, identify how to secure vMotion with encryption.
+目標 4.19.3 - シナリオに基づき、vMotionを暗号化してセキュアにする方法を識別する。
+
+Objective 4.20 - Given a scenario, perform Day 2 Operations within VMware NSX.
+目標 4.20 - シナリオに基づき、VMware NSX内でDay 2オペレーションを実行する。
+
+Objective 4.20.1 - Given a scenario, create a segment using VMware NSX.
+目標 4.20.1 - シナリオに基づき、VMware NSXを使用してセグメントを作成する。
+
+Objective 4.20.2 - Given a scenario, configure logical routing in NSX.
+目標 4.20.2 - シナリオに基づき、NSXで論理ルーティングを構成する。
+
+Objective 4.20.3 - Configure logging for NSX components.
+目標 4.20.3 - NSXコンポーネントのログ設定を行う。
+
+Objective 4.20.4 - Differentiate between the use cases for deploying a new NSX Fabric vs. joining an existing NSX Fabric.
+目標 4.20.4 - 新規NSXファブリック展開と既存NSXファブリック参加のユースケースを区別する。
+
+Objective 4.20.5 - Create a VPC and configure projects to enable multi-tenancy in NSX.
+目標 4.20.5 - NSXでマルチテナンシーを有効にするためにVPCを作成しプロジェクトを構成する。
+
+Objective 4.20.6 - Given a scenario, identify the use cases for VMware NSX advanced features.
+目標 4.20.6 - シナリオに基づき、VMware NSXの高度な機能のユースケースを識別する。
+
+Objective 4.20.7 - Given a scenario, configure VMware NSX advanced features.
+目標 4.20.7 - シナリオに基づき、VMware NSXの高度な機能を構成する。
+
+Objective 4.21 - Given a scenario, perform Day 2 Operations for VMware vSAN.
+目標 4.21 - シナリオに基づき、VMware vSANのDay 2オペレーションを実行する。
+
+Objective 4.21.1 - Configure and manage storage resources, policies, and performance using VMware vSAN and other storage technologies.
+目標 4.21.1 - VMware vSANおよびその他のストレージ技術を用いてストレージリソース、ポリシー、パフォーマンスを構成および管理する。
+
+Objective 4.21.2 - Identify the procedure for setting vSAN in maintenance mode.
+目標 4.21.2 - vSANをメンテナンスモードに設定する手順を識別する。
+
+Objective 4.21.3 - Identify the steps to add storage to a vSAN datastore.
+目標 4.21.3 - vSANデータストアにストレージを追加する手順を識別する。
+
+Objective 4.21.4 - Identify the use cases for enabling/disabling vSAN health alerts.
+目標 4.21.4 - vSANヘルスアラートの有効化/無効化のユースケースを識別する。
+
+Objective 4.22 - Given a scenario, perform Day 2 Operations within VMware Aria Suite.
+目標 4.22 - シナリオに基づき、VMware Aria Suite内でDay 2オペレーションを実行する。
+
+Objective 4.22.1 - Given a scenario, perform Day 2 Operations within VMware Aria Suite Lifecycle.
+目標 4.22.1 - シナリオに基づき、VMware Aria Suite Lifecycle内でDay 2オペレーションを実行する。
+
+Objective 4.22.2 - Complete SSL Certificate Management for the Aria Suite components (including Aria Operations for Networks).
+目標 4.22.2 - Aria Suiteコンポーネント（Aria Operations for Networksを含む）のSSL証明書管理を完了する。
+
+Objective 4.22.3 - Complete License Management for the Aria Suite components (including Aria Operations for Networks).
+目標 4.22.3 - Aria Suiteコンポーネント（Aria Operations for Networksを含む）のライセンス管理を完了する。
+
+Objective 4.22.4 - Given a scenario, scale an existing Aria Suite deployment.
+目標 4.22.4 - シナリオに基づき、既存のAria Suite展開をスケールする。
+
+Objective 4.22.5 - Configure Multi-Organizational Tenancy.
+目標 4.22.5 - マルチ組織テナンシーを構成する。
+
+Objective 4.22.6 - Create a log bundle for an Aria Suite component.
+目標 4.22.6 - Aria Suiteコンポーネントのログバンドルを作成する。
+
+Objective 4.22.7 - Configure Content Management in Aria Suite Lifecycle.
+目標 4.22.7 - Aria Suite Lifecycleでコンテンツ管理を構成する。
+
+Objective 4.22.8 - Given a scenario, operationalize VMware Cloud Foundation with the VMware Aria Suite.
+目標 4.22.8 - シナリオに基づき、VMware Aria Suiteを使ってVMware Cloud Foundationを運用化する。
+
+Objective 4.23 - Deploy workloads on vSphere Supervisor.
+目標 4.23 - vSphere Supervisor上にワークロードを展開する。
+
+Objective 4.24 - Given a scenario, perform virtual machine migrations, operations or tasks using VMware HCX.
+目標 4.24 - シナリオに基づき、VMware HCXを使用して仮想マシンの移行、操作またはタスクを実行する。
+
+Section 5 - Troubleshoot and Optimize the VMware by Broadcom Solution
+セクション 5 - Broadcom社提供のVMwareソリューションのトラブルシューティングと最適化
+
+Objective 5.1 - Diagnose and identify technical issues related to the deployment of VMware Cloud Foundation.
+目標 5.1 - VMware Cloud Foundation展開に関連する技術的問題を診断・特定する。
+
+Objective 5.2 - Diagnose and identify technical issues related to VMware Cloud Foundation.
+目標 5.2 - VMware Cloud Foundationに関連する技術的問題を診断・特定する。
+
+Objective 5.2.1 - Identify the relevant tools for troubleshooting technical issues related to VMware Cloud Foundation.
+目標 5.2.1 - VMware Cloud Foundationの技術的問題トラブルシューティングに関連するツールを識別する。
+
+Objective 5.2.2 - Diagnose and identify technical issues related to VMware Cloud Foundation SDDC Manager.
+目標 5.2.2 - VMware Cloud Foundation SDDC Managerに関連する技術的問題を診断・特定する。
+
+Objective 5.2.3 - Diagnose and identify technical issues related to VMware vSphere (including hosts, clusters, networking, and storage).
+目標 5.2.3 - VMware vSphere（ホスト、クラスタ、ネットワーク、ストレージを含む）に関連する技術的問題を診断・特定する。
+
+Objective 5.2.4 - Diagnose and identify technical issues related to VMware vSphere.
+目標 5.2.4 - VMware vSphereに関連する技術的問題を診断・特定する。
+
+Objective 5.2.5 - Diagnose and identify technical issues related to VMware vSAN.
+目標 5.2.5 - VMware vSANに関連する技術的問題を診断・特定する。
+
+Objective 5.2.6 - Diagnose and identify technical issues related to VMware NSX.
+目標 5.2.6 - VMware NSXに関連する技術的問題を診断・特定する。
+
+Objective 5.3 - Given a scenario, troubleshoot the VMware Cloud Foundation Deployment/Bring Up Process
+目標 5.3 - シナリオに基づき、VMware Cloud Foundationの展開・ブリングアッププロセスをトラブルシューティングする。
+
+Objective 5.4 - Perform troubleshooting tasks for vSphere.
+目標 5.4 - vSphereのトラブルシューティング作業を実行する。
+
+Objective 5.4.1 - Identify the procedure for setting a host in maintenance mode.
+目標 5.4.1 - ホストをメンテナンスモードに設定する手順を識別する。
+
+Objective 5.4.2 - Resolve host connectivity issues.
+目標 5.4.2 - ホストの接続問題を解決する。
+
+Objective 5.4.3 - Resolve certificate issues.
+目標 5.4.3 - 証明書の問題を解決する。
+
+Objective 5.4.4 - Troubleshoot vCLS.
+目標 5.4.4 - vCLS（vSphere Cluster Services）をトラブルシューティングする。
+
+Objective 5.4.5 - Troubleshoot snapshot issues.
+目標 5.4.5 - スナップショットの問題をトラブルシューティングする。
+
+Objective 5.4.6 - Troubleshoot vSphere HA host states.
+目標 5.4.6 - vSphere HAホストの状態をトラブルシューティングする。
+
+Objective 5.4.7 - Troubleshoot lifecycle management.
+目標 5.4.7 - ライフサイクル管理の問題をトラブルシューティングする。
+
+Objective 5.5 - Perform troubleshooting tasks for vSphere Networking.
+目標 5.5 - vSphereネットワークのトラブルシューティング作業を実行する。
+
+Objective 5.5.1 - Identify the health of an NSX Edge cluster to include tier-0 and tier-1 routers.
+目標 5.5.1 - NSX Edgeクラスタ（tier-0およびtier-1ルータを含む）のヘルス状態を識別する。
+
+Objective 5.5.2 - Resolve NSX overlay network connectivity or configuration issues in VMware Cloud Foundation.
+目標 5.5.2 - VMware Cloud FoundationにおけるNSXオーバーレイネットワークの接続または構成問題を解決する。
+
+Objective 5.5.3 - Resolve network connectivity or configuration issues on a vSphere Distributed Switch.
+目標 5.5.3 - vSphere分散スイッチのネットワーク接続または構成問題を解決する。
+
+Objective 5.5.4 - Resolve load balancing issues in NSX.
+目標 5.5.4 - NSXのロードバランシング問題を解決する。
+
+Objective 5.6 - Perform troubleshooting tasks for vSAN.
+目標 5.6 - vSANのトラブルシューティング作業を実行する。
+
+Objective 5.6.1 - Resolve connectivity or configuration issues with vSAN in VMware Cloud Foundation.
+目標 5.6.1 - VMware Cloud FoundationにおけるvSANの接続または構成問題を解決する。
+
+Objective 5.6.2 - Recover from a disk or controller failure in vSAN.
+目標 5.6.2 - vSANにおけるディスクまたはコントローラ障害から回復する。
+
+Objective 5.6.3 - Identify the process to update the vSAN database.
+目標 5.6.3 - vSANデータベースを更新する手順を識別する。
+
+Objective 5.6.4 - Identify the process to update the driver/firmware in vSAN.
+目標 5.6.4 - vSANのドライバー/ファームウェアを更新する手順を識別する。
+
+Objective 5.6.5 - Interpret the Skyline vSAN Health Score and complete remediation action(s).
+目標 5.6.5 - Skyline vSANヘルススコアを解釈し、修復アクションを完了する。
+
+Objective 5.7 - Identify and perform troubleshooting tasks in VMware Cloud Foundation SDDC Manager.
+目標 5.7 - VMware Cloud Foundation SDDC Managerにおけるトラブルシューティング作業を識別・実行する。
+
+Objective 5.7.1 - Resolve issues related to password management in VMware Cloud Foundation.
+目標 5.7.1 - VMware Cloud Foundationにおけるパスワード管理関連の問題を解決する。
+
+Objective 5.7.2 - Identify how to use the "SOS" CLI tool to identify potential health issues in VMware Cloud Foundation.
+目標 5.7.2 - VMware Cloud Foundationの潜在的なヘルス問題を特定するために「SOS」CLIツールの使用方法を識別する。
+
+Objective 5.7.3 - Identify how to use the "SOS" CLI tool to collect logs for a workload domain as part of a support request.
+目標 5.7.3 - サポートリクエストの一環としてワークロードドメインのログを収集するために「SOS」CLIツールの使用方法を識別する。
+
+Objective 5.7.4 - Identify scenarios for using the SDDC Manager local admin account.
+目標 5.7.4 - SDDC Managerのローカル管理者アカウントを使用するシナリオを識別する。
+
+Objective 5.7.5 - Identify how to query passwords for deployed components using SDDC Manager.
+目標 5.7.5 - SDDC Managerを使用して展開済みコンポーネントのパスワードを照会する方法を識別する。
+
+Objective 5.7.6 - Identify the steps to restart/resume a failed workflow.
+目標 5.7.6 - 失敗したワークフローを再起動/再開する手順を識別する。
+
+Objective 5.8 - Perform troubleshooting tasks with VMware Aria Suite.
+目標 5.8 - VMware Aria Suiteを用いたトラブルシューティング作業を実行する。
+
+Objective 5.8.1 - Generate and analyze reports on infrastructure performance, capacity, utilization, and compliance.
+目標 5.8.1 - インフラのパフォーマンス、容量、利用率、コンプライアンスに関するレポートを生成・分析する。
+
+Objective 5.8.2 - Optimize resource allocation and utilization to ensure efficient operation.
+目標 5.8.2 - 効率的な運用を確保するためにリソースの割り当てと利用を最適化する。
+
+Objective 5.8.3 - Identify and implement improvements to enhance the efficiency, performance, and reliability of the VMware Cloud Foundation environment.
+目標 5.8.3 - VMware Cloud Foundation環境の効率、パフォーマンス、信頼性を向上させる改善策を識別し実施する。
+
+Objective 5.8.4 - Verify the health of a VMware Cloud Foundation deployment.
+目標 5.8.4 - VMware Cloud Foundation展開のヘルスを検証する。
+
+Objective 5.9 - Identify and perform troubleshooting of vSphere Supervisor and its components.
+目標 5.9 - vSphere Supervisorおよびそのコンポーネントのトラブルシューティングを識別し実行する。
